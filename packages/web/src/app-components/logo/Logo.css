@@ -1,0 +1,21 @@
+.Logo__root {
+  width: 6.875rem;
+  height: 2.0625rem;
+}
+
+.Logo__root--unlabeled {
+  width: 3.625rem;
+}
+
+.Logo__root--large {
+  width: 12.5rem;
+  height: 3.74rem;
+}
+
+.Logo__text--white {
+  fill: var(--gray-0);
+}
+
+.Logo__text--black {
+  fill: var(--gray-9);
+}
