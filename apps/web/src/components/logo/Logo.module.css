@@ -1,0 +1,21 @@
+.root {
+  width: 6.875rem;
+  height: 2.0625rem;
+}
+
+.root__unlabeled {
+  width: 3.625rem;
+}
+
+.root__large {
+  width: 12.5rem;
+  height: 3.74rem;
+}
+
+.text__white {
+  fill: var(--gray-0);
+}
+
+.text__black {
+  fill: var(--gray-9);
+}

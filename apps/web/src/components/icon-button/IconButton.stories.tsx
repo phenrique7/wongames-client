@@ -1,0 +1,38 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { IconButton } from '@/components/icon-button/IconButton';
+import { AddShoppingCartIcon } from '@/icons/AddShoppingCartIcon';
+
+export default {
+  title: 'components/IconButton',
+  component: IconButton,
+  decorators: [
+    (Story) => (
+      <div style={{ gap: '0.5rem', display: 'flex', alignItems: 'center' }}>
+        <Story />
+      </div>
+    ),
+  ],
+} as ComponentMeta<typeof IconButton>;
+
+const Template: ComponentStory<typeof IconButton> = (args) => (
+  <>
+    <IconButton size="sm" {...args} />
+    <IconButton size="md" {...args} />
+    <IconButton size="lg" {...args} />
+  </>
+);
+
+export const Primary = Template.bind({});
+
+Primary.args = {
+  icon: <AddShoppingCartIcon />,
+  'aria-label': 'Primary',
+};
+
+export const Secondary = Template.bind({});
+
+Secondary.args = {
+  ...Primary.args,
+  variant: 'secondary',
+  'aria-label': 'Secondary',
+};

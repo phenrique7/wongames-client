@@ -1,0 +1,65 @@
+.root {
+  width: auto;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  border-radius: var(--radius-2);
+}
+
+.root__primary {
+  background: linear-gradient(#ff5f5f, #f062c0);
+}
+
+.root__primary:hover {
+  background: linear-gradient(#e35565, #d958a6);
+}
+
+.root__secondary {
+  color: #f231a5;
+  background: transparent;
+}
+
+.root:focus {
+  outline: 3px solid rgba(242, 49, 165, 0.5);
+}
+
+.root__small {
+  padding: var(--size-1);
+}
+
+.root__medium {
+  padding: var(--size-2);
+}
+
+.root__large {
+  padding: var(--size-2_5);
+}
+
+.root_icon {
+  display: inline-flex;
+}
+
+.root_icon__primary svg path {
+  fill: #fafafa;
+}
+
+.root_icon__secondary svg path {
+  fill: #f231a5;
+}
+
+.root_icon__small {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.root_icon__medium {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.root_icon__large {
+  width: var(--size-3);
+  height: var(--size-3);
+}

@@ -1,0 +1,35 @@
+.root {
+  color: var(--gray-9);
+  font-size: var(--font-size-4);
+  line-height: var(--font-lineheight-1);
+}
+
+.root__white {
+  color: var(--gray-0);
+}
+
+.root__line_left {
+  display: flex;
+}
+
+.root__line_left::before {
+  content: "";
+  width: 0.45rem;
+  margin-right: var(--size-2_5);
+  background-color: var(--color-secondary);
+}
+
+.root__line_bottom::after {
+  content: "";
+  display: block;
+  height: 0.45rem;
+  width: var(--size-9);
+  margin-top: var(--size-1);
+  background-color: var(--color-secondary);
+}
+
+@media (--md-n-above) {
+  .root {
+    font-size: var(--font-size-5);
+  }
+}
