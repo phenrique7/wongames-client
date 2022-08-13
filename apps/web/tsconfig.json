@@ -17,9 +17,9 @@
     "baseUrl": ".",
     "types": ["cypress", "@testing-library/cypress"],
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./cypress.d.ts"],
   "exclude": ["node_modules"]
 }

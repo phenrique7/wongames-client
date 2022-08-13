@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { mount } from '@cypress/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from '@/components/button/Button.stories';
 
@@ -7,7 +6,7 @@ const CS = composeStories(stories);
 
 describe('<Button/> test suite', () => {
   it('should render the primary variant with its sizes', () => {
-    mount(<CS.Primary />);
+    cy.mount(<CS.Primary />);
 
     cy.findByText(/primary sm/i).should('have.css', 'font-size', '12px');
     cy.findByText(/primary sm/i).should('have.css', 'padding', '4px 28px');
@@ -29,7 +28,7 @@ describe('<Button/> test suite', () => {
   });
 
   it('should render the secondary variant with its sizes', () => {
-    mount(<CS.Secondary />);
+    cy.mount(<CS.Secondary />);
 
     cy.findByText(/secondary sm/i).should('have.css', 'font-size', '12px');
     cy.findByText(/secondary sm/i).should('have.css', 'padding', '4px 28px');
@@ -51,7 +50,7 @@ describe('<Button/> test suite', () => {
   });
 
   it('should render a full width layout', () => {
-    mount(<CS.FullWidth />);
+    cy.mount(<CS.FullWidth />);
 
     cy.get('button')
       .parent()
@@ -63,7 +62,7 @@ describe('<Button/> test suite', () => {
   });
 
   it('should render with a icon', () => {
-    mount(<CS.WithPrimaryIcon />);
+    cy.mount(<CS.WithPrimaryIcon />);
 
     cy.findByText(/with icon sm/i)
       .find('span')

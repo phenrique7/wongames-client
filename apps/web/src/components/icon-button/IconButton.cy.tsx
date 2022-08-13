@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { mount } from '@cypress/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from '@/components/icon-button/IconButton.stories';
 
@@ -7,7 +6,7 @@ const CS = composeStories(stories);
 
 describe('<IconButton/> test suite', () => {
   it('should render primary layout with its sizes', () => {
-    mount(<CS.Primary />);
+    cy.mount(<CS.Primary />);
 
     cy.findAllByLabelText(/primary/i).each((el, index) => {
       if (index === 0) {
@@ -20,7 +19,7 @@ describe('<IconButton/> test suite', () => {
 
       cy.wrap(el)
         .find('svg path')
-        .should('have.css', 'fill', 'rgb(250, 250, 250)');
+        .should('have.css', 'fill', 'rgb(255, 255, 255)');
       cy.wrap(el).should(
         'have.css',
         'background',
@@ -30,7 +29,7 @@ describe('<IconButton/> test suite', () => {
   });
 
   it('should render secondary layout with its sizes', () => {
-    mount(<CS.Secondary />);
+    cy.mount(<CS.Secondary />);
 
     cy.findAllByLabelText(/secondary/i).each((el, index) => {
       if (index === 0) {

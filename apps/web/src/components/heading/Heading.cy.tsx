@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { mount } from '@cypress/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from '@/components/heading/Heading.stories';
 
@@ -7,7 +6,7 @@ const CS = composeStories(stories);
 
 describe('<Heading /> test suite', () => {
   it('should render a black heading by default', () => {
-    mount(<CS.Default />);
+    cy.mount(<CS.Default />);
 
     cy.findByRole('heading', { name: /won games/i }).should(
       'have.css',
@@ -17,7 +16,7 @@ describe('<Heading /> test suite', () => {
   });
 
   it('should render a white heading when color is passed', () => {
-    mount(<CS.WhiteColor />);
+    cy.mount(<CS.WhiteColor />);
 
     cy.findByRole('heading', { name: /won games/i }).should(
       'have.css',
@@ -27,7 +26,7 @@ describe('<Heading /> test suite', () => {
   });
 
   it('should render a heading with a line to the left side', () => {
-    mount(<CS.WithLineLeft />);
+    cy.mount(<CS.WithLineLeft />);
 
     cy.findByRole('heading', { name: /won games/i }).then(($els) => {
       const win = $els[0].ownerDocument.defaultView;
@@ -38,7 +37,7 @@ describe('<Heading /> test suite', () => {
   });
 
   it('should render a heading with a line at the bottom', () => {
-    mount(<CS.WithLineBottom />);
+    cy.mount(<CS.WithLineBottom />);
 
     cy.findByRole('heading', { name: /won games/i }).then(($els) => {
       const win = $els[0].ownerDocument.defaultView;
