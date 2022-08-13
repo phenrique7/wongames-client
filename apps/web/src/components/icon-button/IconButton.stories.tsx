@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { IconButton } from '@/components/icon-button/IconButton';
 import { AddShoppingCartIcon } from '@/icons/AddShoppingCartIcon';
 
@@ -7,7 +7,7 @@ export default {
   component: IconButton,
   decorators: [
     (Story) => (
-      <div style={{ gap: '0.5rem', display: 'flex', alignItems: 'center' }}>
+      <div className="gap-2 flex items-center">
         <Story />
       </div>
     ),
@@ -25,14 +25,14 @@ const Template: ComponentStory<typeof IconButton> = (args) => (
 export const Primary = Template.bind({});
 
 Primary.args = {
-  icon: <AddShoppingCartIcon />,
   'aria-label': 'Primary',
+  icon: <AddShoppingCartIcon />,
 };
 
 export const Secondary = Template.bind({});
 
 Secondary.args = {
-  ...Primary.args,
   variant: 'secondary',
   'aria-label': 'Secondary',
+  icon: <AddShoppingCartIcon color="var(--color-primary)" />,
 };

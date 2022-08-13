@@ -24,12 +24,12 @@ export function IconButton(props: IconButtonProps) {
       {...other}
     >
       <span
-        className={clsx(styles.root_icon, {
-          [styles.root_icon__small]: size === 'sm',
-          [styles.root_icon__medium]: size === 'md',
-          [styles.root_icon__large]: size === 'lg',
-          [styles.root_icon__primary]: variant === 'primary',
-          [styles.root_icon__secondary]: variant === 'secondary',
+        className={clsx(styles.icon, {
+          [styles.icon__small]: size === 'sm',
+          [styles.icon__medium]: size === 'md',
+          [styles.icon__large]: size === 'lg',
+          [styles.icon__primary]: variant === 'primary',
+          [styles.icon__secondary]: variant === 'secondary',
         })}
       >
         {icon}
