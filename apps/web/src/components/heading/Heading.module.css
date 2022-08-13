@@ -1,11 +1,10 @@
 .root {
-  color: var(--gray-9);
-  font-size: var(--font-size-4);
-  line-height: var(--font-lineheight-1);
+  font-size: theme(fontSize.2xl);
+  font-weight: theme(fontWeight.semibold);
 }
 
 .root__white {
-  color: var(--gray-0);
+  color: theme(colors.gray.50);
 }
 
 .root__line_left {
@@ -15,7 +14,7 @@
 .root__line_left::before {
   content: "";
   width: 0.45rem;
-  margin-right: var(--size-2_5);
+  margin-right: theme(spacing.3);
   background-color: var(--color-secondary);
 }
 
@@ -23,13 +22,13 @@
   content: "";
   display: block;
   height: 0.45rem;
-  width: var(--size-9);
-  margin-top: var(--size-1);
+  width: theme(spacing.16);
+  margin-top: theme(spacing.1);
   background-color: var(--color-secondary);
 }
 
-@media (--md-n-above) {
+@media screen(md) {
   .root {
-    font-size: var(--font-size-5);
+    font-size: theme(fontSize.3xl);
   }
 }
