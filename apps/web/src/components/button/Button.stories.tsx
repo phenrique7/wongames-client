@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Button } from '@/components/button/Button';
 import { AddShoppingCartIcon } from '@/icons/AddShoppingCartIcon';
 
@@ -7,7 +7,7 @@ export default {
   component: Button,
   decorators: [
     (Story) => (
-      <div style={{ gap: '0.5rem', display: 'flex', alignItems: 'center' }}>
+      <div className="gap-2 flex items-center">
         <Story />
       </div>
     ),
