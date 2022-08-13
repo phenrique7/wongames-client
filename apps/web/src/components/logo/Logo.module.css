@@ -1,10 +1,14 @@
 .root {
-  width: 6.875rem;
-  height: 2.0625rem;
+  width: 7.875rem;
+  height: 3.063rem;
+}
+
+.root:focus {
+  outline: 3px solid rgba(242, 49, 165, 0.5);
 }
 
 .root__unlabeled {
-  width: 3.625rem;
+  width: 4.625rem;
 }
 
 .root__large {
@@ -13,9 +17,9 @@
 }
 
 .text__white {
-  fill: var(--gray-0);
+  fill: theme(colors.gray.50);
 }
 
 .text__black {
-  fill: var(--gray-9);
+  fill: theme(colors.gray.900);
 }
