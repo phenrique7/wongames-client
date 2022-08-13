@@ -35,7 +35,7 @@ import { document } from '@keystone-6/fields-document';
 // By providing the Keystone generated `Lists` type to our lists object, we refine
 // our types to a stricter subset that is type-aware of other lists in our schema
 // that Typescript cannot easily infer.
-import { Lists } from '.keystone/types';
+import type { Lists } from '.keystone/types';
 
 // We have a users list, a blogs list, and tags for blog posts, so they can be filtered.
 // Each property on the exported object will become the name of a list (a.k.a. the `listKey`),

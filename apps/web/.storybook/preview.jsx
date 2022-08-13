@@ -19,7 +19,7 @@ export const parameters = {
 
 export const decorators = [
   (Story, { componentId }) => (
-    <div style={{ padding: componentId.includes('components') ? '1rem' : 0 }}>
+    <div className={componentId.includes('components') ? 'p-4' : ''}>
       <App Component={Story} />
     </div>
   ),
