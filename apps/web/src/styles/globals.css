@@ -7,6 +7,8 @@
 
   --color-primary: #f231a5;
   --color-secondary: #3CD3C1;
+  --color-light-gray: #EAEAEA;
+  --color-outline-focus: rgba(242, 49, 165, 0.5);
 }
 
 html,
