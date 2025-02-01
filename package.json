@@ -6,16 +6,16 @@
     "dev": "astro dev --host",
     "start": "astro start",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --host",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^4.0.1",
-    "astro": "^5.1.5",
-    "preact": "^10.25.4"
+    "astro": "^5.1.10",
+    "petite-vue": "^0.4.1"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.51.1",
+    "@playwright/test": "^1.49.1",
     "@types/node": "^20",
     "prettier": "3.4.2",
     "prettier-plugin-astro": "^0.14.1",

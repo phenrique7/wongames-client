@@ -1,0 +1,88 @@
+---
+import Button from "../button/button.astro";
+import Heading from "../heading/heading.astro";
+import MailIcon from "../../icons/mail-icon.astro";
+import LockIcon from "../../icons/lock-icon.astro";
+import { css } from "../../../../styled-system/css";
+import TextField from "../text-field/text-field.astro";
+import { vstack } from "../../../../styled-system/patterns";
+import DefaultAuth from "../default-auth/default-auth.astro";
+import AccountCircleIcon from "../../icons/account-circle-icon.astro";
+---
+
+<div
+  v-scope
+  class={vstack({ gap: 7, width: { base: 80, md: 96 }, alignItems: "stretch" })}
+>
+  <Heading>Sign up</Heading>
+  <div v-if="authType === 'DEFAULT'">
+    <DefaultAuth page="sign-up"/>
+  </div>
+  <div v-else class={vstack({ gap: 1.5, alignItems: "stretch" })} v-cloak>
+    <TextField placeholder="Name" type="text" name="name">
+      <AccountCircleIcon color="#969696" slot="left-element" />
+    </TextField>
+    <TextField placeholder="Email" type="email" name="email">
+      <MailIcon color="#969696" slot="left-element" />
+    </TextField>
+    <TextField placeholder="Password" type="password" name="password">
+      <LockIcon color="#969696" slot="left-element" />
+    </TextField>
+    <TextField placeholder="Confirm password" type="password" name="password-confirmation">
+      <LockIcon color="#969696" slot="left-element" />
+    </TextField>
+    <div class={css({ mt: 5 })}>
+      <Button>Sign up now</Button>
+    </div>
+    <p class={css({ mt: 2, fontSize: "xs", color: "#616061" })}>
+      If you prefer, you can go back and
+      <span
+        role="link"
+        tabindex="0"
+        @click="toggleAuthType"
+        @keyup.enter="toggleAuthType"
+        class={css({
+          cursor: "pointer",
+          fontWeight: "semibold",
+          _hover: {
+            textDecoration: "underline",
+          },
+          _focus: {
+            outline: "3px solid rgba(79, 83, 87, 0.5)",
+          },
+        })}
+      >
+        sign up with GitHub or magic link</span>.
+    </p>
+  </div>
+  <p class={css({ color: "wg_black", fontSize: "sm", textAlign: "center" })}>
+    Already have an account?
+    <a
+      href="/sign-in"
+      class={css({
+        color: "wg_green_dk",
+        fontWeight: "semibold",
+        _hover: {
+          textDecoration: "underline",
+        },
+        _focus: {
+          outline: "3px solid rgba(53, 189, 172, 0.6)",
+        },
+      })}
+    >
+      Sign in
+    </a>
+  </p>
+</div>
+
+<script>
+  import { createApp } from "petite-vue";
+
+  createApp({
+    authType: "DEFAULT",
+
+    toggleAuthType() {
+      this.authType = this.authType === "PASSWORD" ? "DEFAULT" : "PASSWORD";
+    },
+  }).mount();
+</script>
