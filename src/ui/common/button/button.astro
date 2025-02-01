@@ -1,0 +1,24 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { buttonSva } from "./button.sva.ts";
+
+type Props = {
+  size?: "sm" | "md" | "lg";
+  variant?: "primary-solid" | "primary-ghost" | "github";
+} & HTMLAttributes<"button">;
+
+const { variant, size, ...other } = Astro.props;
+
+const styles = buttonSva({ variant, size });
+---
+
+<button class={styles.root} {...other}>
+  {
+    Astro.slots.has("icon") ? (
+      <span class={styles.icon}>
+        <slot name="icon" />
+      </span>
+    ) : null
+  }
+  <slot />
+</button>

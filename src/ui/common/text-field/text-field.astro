@@ -1,0 +1,86 @@
+---
+import { css } from "../../../../styled-system/css";
+import type { HTMLAttributes } from "astro/types";
+import { flex } from "../../../../styled-system/patterns";
+
+type Props = HTMLAttributes<"input">;
+
+const inputId = Astro.locals.useId("input");
+const errorId = Astro.locals.useId("input-error");
+
+const { class: className, ...other } = Astro.props;
+---
+
+<div>
+  {
+    Astro.slots.has("label") ? (
+      <label
+        for={inputId}
+        class={css({
+          bottom: 0.5,
+          fontSize: "sm",
+          color: "wg_black",
+          position: "relative",
+        })}
+      >
+        <slot name="label" />
+      </label>
+    ) : null
+  }
+  <div class={css({ position: "relative" })}>
+    {
+      Astro.slots.has("left-element") ? (
+        <span
+          class={flex({
+            width: 5,
+            left: 3.5,
+            top: "50%",
+            justify: "center",
+            position: "absolute",
+            transform: "translateY(-50%)",
+          })}
+        >
+          <slot name="left-element" />
+        </span>
+      ) : null
+    }
+    <input
+      id={inputId}
+      aria-invalid="false"
+      aria-errormessage={errorId}
+      {...other}
+      class={css({
+        height: 11,
+        padding: 3,
+        width: "100%",
+        fontSize: "sm",
+        borderRadius: "sm",
+        backgroundColor: "#EAEAEA",
+        ...(Astro.slots.has("left-element") && { pl: 12 }),
+        ...(Astro.slots.has("right-element") && { pr: 12 }),
+        _placeholder: {
+          fontSize: "sm",
+        },
+        _focus: {
+          outline: "3px solid rgba(79, 83, 87, 0.5)",
+        },
+      })}
+    />
+    {
+      Astro.slots.has("right-element") ? (
+        <span
+          class={css({
+            width: 6,
+            top: "50%",
+            right: 3.5,
+            position: "absolute",
+            transform: "translateY(-50%)",
+          })}
+        >
+          <slot name="right-element" />
+        </span>
+      ) : null
+    }
+  </div>
+  <div class={css({ fontSize: "xs", color: "red.500", mt: 1 })} id={errorId} aria-live="polite"></div>
+</div>

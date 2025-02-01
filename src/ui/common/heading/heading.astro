@@ -1,0 +1,15 @@
+---
+import { headingCva } from "./heading.cva";
+
+type Props = {
+  linePosition?: "left" | "bottom";
+  color?: "white" | "black";
+};
+
+const { linePosition = "left", color = "black" } = Astro.props;
+const headingClasses = headingCva({ color, linePosition });
+---
+
+<h2 class={headingClasses}>
+  <slot />
+</h2>
