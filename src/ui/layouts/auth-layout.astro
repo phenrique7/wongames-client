@@ -2,6 +2,7 @@
 import "../styles/base.css";
 import { css } from "../../../styled-system/css";
 import FullLogo from "../common/full-logo/full-logo.astro";
+import WipBanner from "../common/wip-banner/wip-banner.astro";
 import { flex, grid, vstack } from "../../../styled-system/patterns";
 ---
 
@@ -15,6 +16,7 @@ import { flex, grid, vstack } from "../../../styled-system/patterns";
     <title>Won Games</title>
   </head>
   <body class={css({ fontFamily: "poppins" })}>
+    <WipBanner />
     <div class={grid({ columns: { base: 1, lg: 2 }, gap: 0, minH: "100dvh" })}>
       <div
         class={flex({
@@ -46,7 +48,7 @@ import { flex, grid, vstack } from "../../../styled-system/patterns";
             class={css({
               width: "fit-content",
               _focus: {
-                outline: "3px solid rgba(242, 49, 165, 0.7)",
+                outline: "2px solid rgb(10, 13, 39)",
               },
             })}
           >

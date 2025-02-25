@@ -16,7 +16,7 @@ import AccountCircleIcon from "../../icons/account-circle-icon.astro";
 >
   <Heading>Sign up</Heading>
   <div v-if="authType === 'DEFAULT'">
-    <DefaultAuth page="sign-up"/>
+    <DefaultAuth page="sign-up" />
   </div>
   <div v-else class={vstack({ gap: 1.5, alignItems: "stretch" })} v-cloak>
     <TextField placeholder="Name" type="text" name="name">
@@ -28,7 +28,11 @@ import AccountCircleIcon from "../../icons/account-circle-icon.astro";
     <TextField placeholder="Password" type="password" name="password">
       <LockIcon color="#969696" slot="left-element" />
     </TextField>
-    <TextField placeholder="Confirm password" type="password" name="password-confirmation">
+    <TextField
+      type="password"
+      name="password-confirmation"
+      placeholder="Confirm password"
+    >
       <LockIcon color="#969696" slot="left-element" />
     </TextField>
     <div class={css({ mt: 5 })}>
@@ -66,7 +70,7 @@ import AccountCircleIcon from "../../icons/account-circle-icon.astro";
           textDecoration: "underline",
         },
         _focus: {
-          outline: "3px solid rgba(53, 189, 172, 0.6)",
+          outline: "2px solid rgb(10, 13, 39)",
         },
       })}
     >

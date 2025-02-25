@@ -17,7 +17,9 @@ const { page } = Astro.props;
 <form>
   <div class={vstack({ gap: 4, alignItems: "stretch", mb: 9 })}>
     <Button variant="github" type="button">
-      <GithubIcon slot="icon" />Continue with GitHub
+      <span slot="icon" class={css({ display: "inline-block", width: 4 })}>
+        <GithubIcon />
+      </span>Continue with GitHub
     </Button>
     <span
       class={flex({
@@ -39,7 +41,8 @@ const { page } = Astro.props;
           width: "100%",
           backgroundColor: "#DBDCDF",
         },
-      })}>or</span>
+      })}>or</span
+    >
     <TextField placeholder="Email">
       <MailIcon color="#969696" slot="left-element" />
     </TextField>
@@ -74,10 +77,11 @@ const { page } = Astro.props;
           textDecoration: "underline",
         },
         _focus: {
-          outline: "3px solid rgba(255, 114, 95, 0.7)",
+          outline: "2px solid rgb(10, 13, 39)",
         },
       })}
     >
-      sign {page === "sign-up" ? "up" : "in"} with password instead</span>.
+      sign {page === "sign-up" ? "up" : "in"} with password instead</span
+    >.
   </p>
 </div>

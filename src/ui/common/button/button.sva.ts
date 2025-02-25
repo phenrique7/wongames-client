@@ -60,7 +60,7 @@ export const buttonSva = sva({
             background: "linear-gradient(#e35565, #d958a6)",
           },
           _focus: {
-            outline: "3px solid rgba(242, 49, 165, 0.5)",
+            outline: "2px solid rgb(10, 13, 39)",
           },
         },
       },
@@ -72,7 +72,7 @@ export const buttonSva = sva({
             backgroundColor: "stone.100",
           },
           _focus: {
-            outline: "3px solid rgba(242, 49, 165, 0.5)",
+            outline: "2px solid rgb(10, 13, 39)",
           },
         },
       },
@@ -84,7 +84,7 @@ export const buttonSva = sva({
             backgroundColor: "#191C20",
           },
           _focus: {
-            outline: "3px solid rgba(79, 83, 87, 0.5)",
+            outline: "2px solid rgb(10, 13, 39)",
           },
         },
       },

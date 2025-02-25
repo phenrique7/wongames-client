@@ -56,6 +56,8 @@ export default defineConfig({
           wg_orange: { value: "#F56161" },
           wg_green_mn: { value: "#3CD3C1" },
           wg_green_dk: { value: "#35BDAC" },
+          charcoal_onyx: { value: "#212529" },
+          shadow_gray: { value: "#616061" },
         },
       },
     },

@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { iconButtonSva } from "./icon-button.sva";
+
+type Props = {
+  size?: "sm" | "md" | "lg";
+  variant?: "solid" | "ghost";
+} & HTMLAttributes<"button">;
+
+const { size, variant, ...other } = Astro.props;
+const styles = iconButtonSva({ size, variant });
+---
+
+<button class={styles.root} {...other}>
+  <span class={styles.icon}>
+    <slot name="icon" />
+  </span>
+</button>

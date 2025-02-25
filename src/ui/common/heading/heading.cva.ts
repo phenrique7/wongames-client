@@ -2,11 +2,27 @@ import { cva } from "../../../../styled-system/css";
 
 export const headingCva = cva({
   base: {
-    fontSize: "2xl",
-    lineHeight: 1.25,
     fontWeight: "semibold",
   },
   variants: {
+    size: {
+      sm: {
+        lineHeight: 1,
+        fontSize: "md",
+        _after: {
+          width: 8,
+          height: "0.3rem",
+        },
+      },
+      md: {
+        fontSize: "2xl",
+        lineHeight: 1.25,
+        _after: {
+          width: 12,
+          height: "0.45rem",
+        },
+      },
+    },
     color: {
       white: { color: "wg_white" },
       black: { color: "wg_black" },
@@ -24,16 +40,15 @@ export const headingCva = cva({
       bottom: {
         _after: {
           mt: 1,
-          width: 16,
           content: "''",
           display: "block",
-          height: "0.45rem",
           bgColor: "wg_green_dk",
-        }
+        },
       },
     },
   },
   defaultVariants: {
+    size: "md",
     color: "black",
     linePosition: "left",
   },

@@ -1,0 +1,390 @@
+---
+import "../styles/base.css";
+import XIcon from "../icons/x-icon.astro";
+import Logo from "../common/logo/logo.html";
+import { css } from "../../../styled-system/css";
+import SearchIcon from "../icons/search-icon.astro";
+import GitHubIcon from "../icons/github-icon.astro";
+import Heading from "../common/heading/heading.astro";
+import LinkedinIcon from "../icons/linkedin-icon.astro";
+import InstagramIcon from "../icons/instagram-icon.astro";
+import FullLogo from "../common/full-logo/full-logo.astro";
+import ArrowBackIcon from "../icons/arrow-back-icon.astro";
+import WipBanner from "../common/wip-banner/wip-banner.astro";
+import TextField from "../common/text-field/text-field.astro";
+import IconButton from "../common/icon-button/icon-button.astro";
+import ShoppingCartIcon from "../icons/shopping-cart-icon.astro";
+import AccountCircleIcon from "../icons/account-circle-icon.astro";
+import {
+  flex,
+  hstack,
+  vstack,
+  container,
+} from "../../../styled-system/patterns";
+
+const isLoggedIn = false;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Won Games</title>
+  </head>
+  <body class={css({ fontFamily: "poppins" })}>
+    <div
+      class={flex({
+        minH: "100dvh",
+        flexDir: "column",
+        bgColor: "charcoal_onyx",
+        alignItems: "stretch",
+      })}
+    >
+      <WipBanner />
+      <div class={container({ maxW: "7xl", width: "100%" })}>
+        <header>
+          <nav class={flex({ pt: 8, justify: "space-between" })}>
+            <div class={hstack({ gap: 10, alignItems: "center", flex: 1 })}>
+              <a
+                href="/"
+                class={css({
+                  width: "fit-content",
+                  _focus: {
+                    outline: "2px solid rgb(10, 13, 39)",
+                  },
+                })}
+              >
+                <FullLogo color="white" />
+              </a>
+              <a
+                href="/"
+                class={css({
+                  color: "wg_white",
+                  fontWeight: "medium",
+                  _focus: {
+                    outline: "2px solid rgb(10, 13, 39)",
+                  },
+                })}
+              >
+                Home
+              </a>
+              <a
+                href="/store"
+                class={css({
+                  color: "wg_white",
+                  fontWeight: "medium",
+                  _focus: {
+                    outline: "2px solid rgb(10, 13, 39)",
+                  },
+                })}
+              >
+                Store
+              </a>
+            </div>
+            <div class={css({ flex: 1 })}>
+              <TextField
+                type="text"
+                name="search"
+                placeholder="Search for games..."
+                overrides={css.raw({
+                  color: "wg_white",
+                  bgColor: "#1b1f22",
+                  border: "1px solid #34373B",
+                  _placeholder: { color: "#8F8F8F" },
+                  _focus: {
+                    outline: "2px solid rgb(10, 13, 39)",
+                  },
+                })}
+              >
+                <span
+                  slot="right-element"
+                  class={css({ width: 6, display: "block" })}
+                >
+                  <SearchIcon color="#8F8F8F" />
+                </span>
+              </TextField>
+            </div>
+            <div
+              class={hstack({
+                gap: 9,
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "flex-end",
+              })}
+            >
+              <IconButton variant="ghost">
+                <ShoppingCartIcon color="#FAFAFA" slot="icon" />
+              </IconButton>
+              {
+                isLoggedIn ? (
+                  <div
+                    class={hstack({
+                      gap: 2.5,
+                      color: "wg_white",
+                      alignItems: "center",
+                    })}
+                  >
+                    <AccountCircleIcon slot="left-element" />
+                    <span>John</span>
+                    <span
+                      class={css({
+                        width: 2,
+                        display: "block",
+                        transform: "rotate(-90deg)",
+                      })}
+                    >
+                      <ArrowBackIcon color="#8F8F8F" />
+                    </span>
+                  </div>
+                ) : (
+                  <a
+                    href="/sign-in"
+                    class={css({
+                      px: 8,
+                      py: 2,
+                      color: "white",
+                      fontSize: "sm",
+                      border: "none",
+                      cursor: "pointer",
+                      borderRadius: "sm",
+                      alignItems: "center",
+                      whiteSpace: "nowrap",
+                      fontWeight: "medium",
+                      display: "inline-flex",
+                      justifyContent: "center",
+                      background: "linear-gradient(#ff5f5f, #f062c0)",
+                      _hover: {
+                        background: "linear-gradient(#e35565, #d958a6)",
+                      },
+                      _focus: {
+                        outline: "2px solid rgb(10, 13, 39)",
+                      },
+                    })}
+                  >
+                    Sign in
+                  </a>
+                )
+              }
+            </div>
+          </nav>
+        </header>
+      </div>
+      <div class={css({ py: 24, px: 8, flex: 1 })}>
+        <slot />
+      </div>
+      <footer class={css({ bgColor: "wg_white" })}>
+        <div
+          class={css({
+            height: 20,
+            bgColor: "charcoal_onyx",
+            clipPath: "polygon(0% 0%, 100% 0%, 0% 100%)",
+          })}
+        >
+        </div>
+        <div
+          class={container({
+            pb: 8,
+            pt: 12,
+            maxW: "7xl",
+            display: "flex",
+            flexDir: "column",
+          })}
+        >
+          <div class={flex()}>
+            <div class={css({ flexBasis: "14%" })}>
+              <a
+                href="/"
+                class={css({
+                  width: 8,
+                  height: 6,
+                  display: "block",
+                  _focus: {
+                    outline: "2px solid rgb(10, 13, 39)",
+                  },
+                })}
+              >
+                <Logo />
+              </a>
+            </div>
+            <div class={flex({ gap: 8, flex: 1 })}>
+              <ul
+                class={vstack({
+                  gap: 2.5,
+                  flexBasis: "11rem",
+                  alignItems: "flex-start",
+                  "& li:not(:first-child)": {
+                    fontSize: "sm",
+                    color: "shadow_gray",
+                  },
+                })}
+              >
+                <li>
+                  <Heading linePosition="bottom" size="sm"> COMPANY </Heading>
+                </li>
+                <li>About</li>
+                <li>Stores</li>
+                <li>Partners</li>
+                <li>Franchises & Multibrands</li>
+                <li>Careers</li>
+                <li>Contact</li>
+              </ul>
+              <ul
+                class={vstack({
+                  gap: 2.5,
+                  flexBasis: "11rem",
+                  alignItems: "flex-start",
+                  "& li:not(:first-child)": {
+                    fontSize: "sm",
+                    color: "shadow_gray",
+                  },
+                })}
+              >
+                <li>
+                  <Heading linePosition="bottom" size="sm"> RESOURCES </Heading>
+                </li>
+                <li>Blog</li>
+                <li>Payments</li>
+                <li>Refund</li>
+                <li>Support</li>
+                <li>FAQ</li>
+              </ul>
+              <ul
+                class={vstack({
+                  gap: 2.5,
+                  alignItems: "flex-start",
+                  "& li:not(:first-child)": {
+                    fontSize: "sm",
+                    color: "shadow_gray",
+                  },
+                })}
+              >
+                <li>
+                  <Heading linePosition="bottom" size="sm"> PRIVACY </Heading>
+                </li>
+                <li>Terms & Conditions</li>
+                <li>Cookie Policy</li>
+                <li>Privacy Policy</li>
+              </ul>
+            </div>
+            <form class={vstack({ gap: 2, alignItems: "flex-start", w: 72 })}>
+              <Heading
+                size="sm"
+                linePosition="bottom"
+                overrides={css.raw({ mb: 2 })}
+              >
+                NEWSLETTER
+              </Heading>
+              <TextField
+                placeholder="Enter your email"
+                overrides={css.raw({ pr: 20 })}
+              >
+                <button
+                  slot="right-element"
+                  class={css({
+                    padding: 3,
+                    right: -3.5,
+                    fontSize: "xs",
+                    color: "wg_black",
+                    fontWeight: "medium",
+                    position: "relative",
+                    _hover: {
+                      cursor: "pointer",
+                      color: "rgba(10, 13, 39, 0.8)",
+                    },
+                    _focus: {
+                      outline: "2px solid rgb(10, 13, 39)",
+                    },
+                  })}
+                >
+                  Subscribe
+                </button>
+              </TextField>
+              <p class={css({ color: "shadow_gray", fontSize: "sm" })}>
+                Get the latest game news and behind the scenes updates.
+                Unsubscribe at any time.
+              </p>
+            </form>
+          </div>
+          <div
+            class={flex({
+              mt: 20,
+              fontSize: "xs",
+              textAlign: "center",
+              color: "shadow_gray",
+              justifyContent: "space-between",
+            })}
+          >
+            Won Games {new Date().getFullYear()} © All rights reserved
+            <div
+              class={flex({
+                gap: 5,
+                color: "shadow_gray",
+                alignItems: "center",
+              })}
+            >
+              <a
+                target="_blank"
+                href="https://instagram.com"
+                class={css({
+                  width: 3.5,
+                  height: 4,
+                  display: "block",
+                  _focus: {
+                    outline: "2px solid rgb(10, 13, 39)",
+                  },
+                })}
+              >
+                <InstagramIcon />
+              </a>
+              <a
+                target="_blank"
+                href="https://x.com"
+                class={css({
+                  width: 4,
+                  height: 4,
+                  display: "block",
+                  _focus: {
+                    outline: "2px solid rgb(10, 13, 39)",
+                  },
+                })}
+              >
+                <XIcon />
+              </a>
+              <a
+                target="_blank"
+                href="https://linkedin.com"
+                class={css({
+                  width: 4,
+                  height: 4,
+                  display: "block",
+                  _focus: {
+                    outline: "2px solid rgb(10, 13, 39)",
+                  },
+                })}
+              >
+                <LinkedinIcon />
+              </a>
+              <a
+                target="_blank"
+                href="https://github.com"
+                class={css({
+                  width: 3.5,
+                  height: 4,
+                  display: "block",
+                  _focus: {
+                    outline: "2px solid rgb(10, 13, 39)",
+                  },
+                })}
+              >
+                <GitHubIcon />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

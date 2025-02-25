@@ -1,14 +1,16 @@
 ---
-import { css } from "../../../../styled-system/css";
 import type { HTMLAttributes } from "astro/types";
 import { flex } from "../../../../styled-system/patterns";
+import { css, type Styles } from "../../../../styled-system/css";
 
-type Props = HTMLAttributes<"input">;
+type Props = HTMLAttributes<"input"> & {
+  overrides?: Styles;
+};
 
 const inputId = Astro.locals.useId("input");
 const errorId = Astro.locals.useId("input-error");
 
-const { class: className, ...other } = Astro.props;
+const { overrides, ...other } = Astro.props;
 ---
 
 <div>
@@ -49,28 +51,29 @@ const { class: className, ...other } = Astro.props;
       aria-invalid="false"
       aria-errormessage={errorId}
       {...other}
-      class={css({
-        height: 11,
-        padding: 3,
-        width: "100%",
-        fontSize: "sm",
-        borderRadius: "sm",
-        backgroundColor: "#EAEAEA",
-        ...(Astro.slots.has("left-element") && { pl: 12 }),
-        ...(Astro.slots.has("right-element") && { pr: 12 }),
-        _placeholder: {
+      class={css(
+        {
+          height: 11,
+          padding: 3,
+          width: "100%",
           fontSize: "sm",
+          borderRadius: "sm",
+          backgroundColor: "#EAEAEA",
+          ...(Astro.slots.has("left-element") && { pl: 12 }),
+          _placeholder: {
+            fontSize: "sm",
+          },
+          _focus: {
+            outline: "2px solid rgb(10, 13, 39)",
+          },
         },
-        _focus: {
-          outline: "3px solid rgba(79, 83, 87, 0.5)",
-        },
-      })}
+        overrides,
+      )}
     />
     {
       Astro.slots.has("right-element") ? (
         <span
           class={css({
-            width: 6,
             top: "50%",
             right: 3.5,
             position: "absolute",
@@ -82,5 +85,10 @@ const { class: className, ...other } = Astro.props;
       ) : null
     }
   </div>
-  <div class={css({ fontSize: "xs", color: "red.500", mt: 1 })} id={errorId} aria-live="polite"></div>
+  <div
+    class={css({ fontSize: "xs", color: "red.500", mt: 1 })}
+    id={errorId}
+    aria-live="polite"
+  >
+  </div>
 </div>
