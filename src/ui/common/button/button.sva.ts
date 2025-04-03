@@ -28,7 +28,7 @@ export const buttonSva = sva({
           fontSize: "xs",
         },
         icon: {
-          width: 4,
+          width: "auto",
         },
       },
       md: {
@@ -38,7 +38,7 @@ export const buttonSva = sva({
           fontSize: "sm",
         },
         icon: {
-          width: 5,
+          width: "auto",
         },
       },
       lg: {
@@ -47,7 +47,7 @@ export const buttonSva = sva({
           py: 4,
         },
         icon: {
-          width: 6,
+          width: "auto",
         },
       },
     },

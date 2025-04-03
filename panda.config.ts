@@ -5,42 +5,10 @@ export default defineConfig({
   preflight: true,
 
   // Where to look for your css declarations
-  include: ["./src/**/*.{js,jsx,ts,tsx,astro}"],
+  include: [".storybook/*.{tsx}/", "./src/**/*.{js,jsx,ts,tsx}"],
 
   // Files to exclude
   exclude: [],
-
-  globalVars: {
-    "--font-poppins": "Poppins",
-  },
-
-  globalFontface: {
-    Poppins: [
-      {
-        src: 'url("/fonts/poppins-v22-latin-regular.woff2") format("woff2"); ',
-        fontWeight: 400,
-        fontStyle: "normal",
-        fontDisplay: "swap",
-      },{
-        src: 'url("/fonts/poppins-v22-latin-500.woff2") format("woff2");',
-        fontWeight: 500,
-        fontStyle: "normal",
-        fontDisplay: "swap",
-      },
-      {
-        src: 'url("/fonts/poppins-v22-latin-600.woff2") format("woff2");',
-        fontWeight: 600,
-        fontStyle: "normal",
-        fontDisplay: "swap",
-      },
-      {
-        src: 'url("/fonts/poppins-v22-latin-700.woff2") format("woff2");',
-        fontWeight: 700,
-        fontStyle: "normal",
-        fontDisplay: "swap",
-      },
-    ],
-  },
 
   // Useful for theme customization
   theme: {
