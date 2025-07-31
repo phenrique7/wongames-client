@@ -6,8 +6,8 @@ export type DeviceType = "PHONE" | "LONG_PHONE" | "TABLET" | "LONG_TABLET";
 
 // Breakpoints for different device types
 const BREAKPOINTS = {
-  PHONE_MAX_WIDTH: 767, // Max width for phones
-  TABLET_MIN_WIDTH: 768, // Min width for tablets
+  PHONE_MAX_WIDTH: 480, // Max width for phones
+  TABLET_MIN_WIDTH: 481, // Min width for tablets
   TABLET_MAX_WIDTH: 1024, // Max width for tablets
   ASPECT_RATIO_THRESHOLD: 1.6, // Threshold to determine if a device is "long"
 };

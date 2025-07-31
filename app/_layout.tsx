@@ -9,11 +9,11 @@ import theme from "@/ui/styles/theme";
 export default function RootLayout() {
   return (
     <ThemeProvider theme={theme}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="index" />
-          {Platform.OS !== "web" ? <Stack.Screen name="hero" /> : null}
-        </Stack>
-        <StatusBar style="auto" />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        {Platform.OS !== "web" ? <Stack.Screen name="hero" /> : null}
+      </Stack>
+      <StatusBar style="auto" />
     </ThemeProvider>
   );
 }
