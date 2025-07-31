@@ -38,7 +38,7 @@ export default function AuthLayout(props: AuthLayoutProps) {
           })}
         >
           <a
-            href="/"
+            href="/_old/public"
             className={css({
               width: "fit-content",
               _focus: {
