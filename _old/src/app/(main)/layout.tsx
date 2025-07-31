@@ -53,7 +53,7 @@ export default function MainLayout(props: MainLayoutProps) {
               })}
             >
               <Link
-                href="/"
+                href="/_old/public"
                 className={css({
                   width: "fit-content",
                   _focus: {
@@ -64,7 +64,7 @@ export default function MainLayout(props: MainLayoutProps) {
                 <FullLogo color="white" />
               </Link>
               <Link
-                href="/"
+                href="/_old/public"
                 className={css({
                   color: "wg_white",
                   fontWeight: "medium",
@@ -91,7 +91,7 @@ export default function MainLayout(props: MainLayoutProps) {
             {/*second column*/}
             <div className={css({ flex: 1, hideFrom: "lg" })}>
               <Link
-                href="/"
+                href="/_old/public"
                 className={css({
                   w: 12,
                   mx: "auto",
@@ -208,7 +208,7 @@ export default function MainLayout(props: MainLayoutProps) {
           >
             <div className={css({ flexBasis: "12%" })}>
               <Link
-                href="/"
+                href="/_old/public"
                 className={css({
                   width: 8,
                   height: 6,
